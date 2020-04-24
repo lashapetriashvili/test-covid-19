@@ -1,0 +1,35 @@
+$--light-color-red: #ed5563;
+$--color-red: #e55c52;
+$--color-orange: #ea774b;
+$--color-yellow: #f4c751;
+$--light-color-green: #94cd64;
+$--color-green: #5cc46d;
+$--color-ocean: #55c8ba;
+$--light-color-blue: #50b8dd;
+$--color-blue: #5997e5;
+$--color-pink: #8e93e5;
+
+
+/* MainTheme Colors */
+$--color-theme-primary: $--color-pink;
+$--color-theme-success: $--color-green;
+$--color-theme-warning: $--color-yellow;
+$--color-theme-danger: $--light-color-red;
+$--color-theme-info: $--color-blue;
+
+/* Common Colors */
+$--color-white: #ffffff;
+$--color-black: #000000;
+$--color-gray: #9e9eaa;
+$--color-gray-light: #f9f9f9;
+$--color-gray-dark: darken($--color-gray, 15%); // #757586
+
+
+/* Text Colors */
+$--color-text-primary: #030e16;
+$--color-text-midnight: lighten($--color-text-primary, 10%); // #092b43
+
+/* background color */
+$--color-background-primary: $--color-white;
+$--color-background-secondary: #f8f8f8;
+$--color-background-gray: #eaebef;

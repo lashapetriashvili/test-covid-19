@@ -1,0 +1,95 @@
+/**
+ * Get the value for justify-content
+ */
+@function getJustify($argument) {
+  // All Justify List
+  $justify: (
+    'sa':space-around,
+    'sb':space-between,
+    'se':space-evenly,
+    'c' :center,
+    'fs':flex-start,
+    'fe':flex-end,
+    'i' : initial
+  );
+  // Loop Each Justify
+  @each $key, $value in $justify {
+    // Check If Justify Key Equal To Function Argument
+    @if ($key == $argument) {
+      // Return Justify Value
+      @return $value;
+    }
+  }
+}
+
+/**
+ * Get the value for align-items
+ */
+@function getAlign($argument) {
+  // All Align List
+  $align: (
+    'b' :baseline,
+    's' :stretch,
+    'c' :center,
+    'fs':flex-start,
+    'fe':flex-end,
+    'i' : initial
+  );
+  // Loop Each Aligns
+  @each $key, $value in $align {
+    // Check If Align Key Equal To Function Argument
+    @if ($key == $argument) {
+      // Return Align Value
+      @return $value;
+    }
+  }
+}
+
+/**
+ * Get the value for flex-direction
+ */
+@function getDirection($argument) {
+  // All Direction List
+  $directions: (
+    'r' : row,
+    'rr': row-reverse,
+    'c' : column,
+    'cr': column-reverse,
+    'i' : initial
+  );
+  // Loop Each Directions
+  @each $key, $value in $directions {
+    // Check If Direction Key Equal To Function Argument
+    @if ($key == $argument) {
+      // Return Direction Value
+      @return $value;
+    }
+  }
+}
+
+/**
+ * Get the value for flex-wrap
+ */
+@function getWrap($argument) {
+  // All Direction List
+  $wraps: (
+    'nw': nowrap,
+    'w' : wrap,
+    'wr': wrap-reverse,
+    'i' : initial
+  );
+  // Loop Each Wraps
+  @each $key, $value in $wraps {
+    // Check If Wraps Key Equal To Function Argument
+    @if ($key == $argument) {
+      // Return Wrap Value
+      @return $value;
+    }
+  }
+}
+
+// Vendoo flex
+@mixin v-flex() {
+  display: flex;
+  @content
+}

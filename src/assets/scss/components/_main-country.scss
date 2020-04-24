@@ -1,0 +1,43 @@
+.main-country {
+  width: 75%;
+  position: relative;
+
+  &__list {
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__row {
+    width: 100%;
+    display: flex;
+  }
+
+  &__item {
+    flex-grow: 1;
+    text-align: center;
+    width: 20%;
+    margin: 2rem;
+    border: .4rem solid;
+    border-radius: .8rem;
+    text-transform: uppercase;
+    padding: 4rem 3rem;
+
+    &__text {
+      display: block;
+      color: #1e3876;
+      font-weight: bold;
+      font-size: 2rem;
+      margin: 2.5rem 0;
+    }
+
+    &__value {
+      display: block;
+      color: #8d9dbb;
+      font-size: 3rem;
+      margin: 2.5rem 0;
+    }
+  }
+}

@@ -1,0 +1,177 @@
+$xs: '22.5rem';
+$sm: '42.5rem';
+$md: '48rem';
+$lg: '64rem';
+$xl: '82rem';
+
+@mixin xs-up { /* font(16) 360px | font(14) 315 */
+  @media (min-width: #{$xs}) { @content; }
+}
+@mixin sm-up { /* font(16) 576px | font(14) 504 */
+  @media (min-width: #{$sm}) { @content; }
+}
+@mixin md-up { /* font(16) 768px | font(14) 672 */
+  @media (min-width: #{$md}) { @content; }
+}
+@mixin lg-up { /* font(16) 1024px | font(14) 896 */
+  @media (min-width: #{$lg}) { @content; }
+}
+@mixin xl-up { /* font(16) 1312px | font(14) 1148 */
+  @media (min-width: #{$xl}) { @content; }
+}
+
+@mixin upto-xs { /* font(16) 360px | font(14) 315 */
+  /* .001rem because Chrome not understand 1px */
+  @media (max-width: calc(#{$xs} - .001rem)) { @content; }
+}
+@mixin upto-sm { /* font(16) 576px | font(14) 504 */
+  /* .001rem because Chrome not understand 1px */
+  @media (max-width: calc(#{$sm} - .001rem)) { @content; }
+}
+@mixin upto-md { /* font(16) 768px | font(14) 672 */
+  /* .001rem because Chrome not understand 1px */
+  @media (max-width: calc(#{$md} - .001rem)) { @content; }
+}
+@mixin upto-lg { /* font(16) 1024px | font(14) 896 */
+  /* .001rem because Chrome not understand 1px */
+  @media (max-width: calc(#{$lg} - .001rem)) { @content; }
+}
+@mixin upto-xl { /* font(16) 1312px | font(14) 1148 */
+  /* .001rem because Chrome not understand 1px */
+  @media (max-width: calc(#{$xl} - .001rem)) { @content; }
+}
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity = $opacity-ie); //IE8
+}
+
+@mixin gradient($start-color, $end-color, $orientation) {
+  background: $start-color;
+  @if $orientation == 'vertical' {
+    background: -webkit-linear-gradient(top, $start-color, $end-color);
+    background: linear-gradient(to bottom, $start-color, $end-color);
+  } @else if $orientation == 'horizontal' {
+    background: -webkit-linear-gradient(left, $start-color, $end-color);
+    background: linear-gradient(to right, $start-color, $end-color);
+  } @else {
+    background: -webkit-radial-gradient(center, ellipse cover, $start-color, $end-color);
+    background: radial-gradient(ellipse at center, $start-color, $end-color);
+  }
+}
+
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin line-clamp($lines) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0;
+
+  -webkit-line-clamp: $lines;
+  height: calc(1em * 1.2 * #{$lines});
+}
+
+@mixin height-reservation {
+  height: 1.2em;
+  line-height: 1.2em;
+}
+
+/* Bootstrap Mixins */
+
+@mixin make-row() {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@mixin make-container() {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin float-left {
+  float: left !important;
+}
+
+@mixin float-right {
+  float: right !important;
+}
+
+@mixin float-none {
+  float: none !important;
+}
+
+@mixin hover-focus {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+@mixin hover {
+  &:hover { @content; }
+}
+
+@mixin text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+@mixin invisible($visibility) {
+  visibility: $visibility !important;
+}
+
+@mixin img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+@mixin gradient-bg($color, $body-bg) {
+  background: $color linear-gradient(180deg, mix($body-bg, $color, 15%), $color) repeat-x;
+}
+
+@mixin gradient-x($start-color, $end-color, $start-percent: 0%, $end-percent: 100%) {
+  background-image: linear-gradient(to right, $start-color $start-percent, $end-color $end-percent);
+  background-repeat: repeat-x;
+}
+
+@mixin gradient-directional($start-color, $end-color, $deg: 45deg) {
+  background-image: linear-gradient($deg, $start-color, $end-color);
+  background-repeat: repeat-x;
+}
+
+@mixin gradient-x-three-colors($start-color, $mid-color, $color-stop, $end-color) {
+  background-image: linear-gradient(to right, $start-color, $mid-color $color-stop, $end-color);
+  background-repeat: no-repeat;
+}
+
+@mixin gradient-y-three-colors($start-color, $mid-color, $color-stop, $end-color) {
+  background-image: linear-gradient($start-color, $mid-color $color-stop, $end-color);
+  background-repeat: no-repeat;
+}
+
+/* End Bootstrap Mixins */

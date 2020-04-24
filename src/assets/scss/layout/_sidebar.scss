@@ -1,0 +1,58 @@
+.sidebar {
+  width: 25%;
+
+  &__search {
+    padding: 1rem;
+
+    &__input {
+      color: #bebec0;
+      text-transform: uppercase;
+
+      &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #bebec0;
+        opacity: 1; /* Firefox */
+      }
+
+      &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: #bebec0;
+      }
+
+      &::-ms-input-placeholder { /* Microsoft Edge */
+        color: #bebec0;
+      }
+    }
+  }
+
+  &__country-list {
+    height: calc(100vh - 10rem);
+    overflow-y: scroll;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item {
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: .2s;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    font-size: 2rem;
+
+    &:hover {
+      background: #f2f4fc;
+    }
+
+    &__country {
+      color: #1e3876;
+      font-weight: bold;
+    }
+
+    &__total {
+      color: #8d9dbb;
+    }
+  }
+}

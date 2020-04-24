@@ -1,0 +1,42 @@
+// Margin Size List
+$margin-sizes: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10;
+
+// Loop Each Margin Size
+@each $size in $margin-sizes {
+  .m#{$size}  { margin:        #{$size}rem }
+  .mt#{$size} { margin-top:    #{$size}rem }
+  .mr#{$size} { margin-right:  #{$size}rem }
+  .mb#{$size} { margin-bottom: #{$size}rem }
+  .ml#{$size} { margin-left:   #{$size}rem }
+  .mx#{$size} { margin-left:   #{$size}rem; margin-right:  #{$size}rem; }
+  .my#{$size} { margin-top:    #{$size}rem; margin-bottom: #{$size}rem; }
+}
+
+// Custom Margin
+
+.m05  { margin:        .5rem }
+.mt05 { margin-top:    .5rem }
+.mr05 { margin-right:  .5rem }
+.mb05 { margin-bottom: .5rem }
+.ml05 { margin-left:   .5rem }
+.mx05 { margin-left:   .5rem; margin-right:  .5rem; }
+.my05 { margin-top:    .5rem; margin-bottom: .5rem; }
+
+.m15  { margin:        1.5rem }
+.mt15 { margin-top:    1.5rem }
+.mr15 { margin-right:  1.5rem }
+.mb15 { margin-bottom: 1.5rem }
+.ml15 { margin-left:   1.5rem }
+.mx15 { margin-left:   1.5rem; margin-right:  1.5rem; }
+.my15 { margin-top:    1.5rem; margin-bottom: 1.5rem; }
+
+.mxn05 { margin-left: -.5rem; margin-right: -.5rem; }
+.mxn1  { margin-left: -1rem; margin-right: -1rem; }
+.mxn15 { margin-left: -1.5rem; margin-right: -1.5rem; }
+.mxn2  { margin-left: -2rem; margin-right: -2rem; }
+.mxn3  { margin-left: -3rem; margin-right: -3rem; }
+.mxn4  { margin-left: -4rem; margin-right: -4rem; }
+
+.ml-auto { margin-left: auto }
+.mr-auto { margin-right: auto }
+.mx-auto { margin-left: auto; margin-right: auto }
